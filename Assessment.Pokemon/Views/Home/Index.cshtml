@@ -1,0 +1,20 @@
+﻿@model Assessment.Pokemon.Models.Pokemon.PokemonViewModel;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">pokemons-ssds</h1>
+    @{
+        foreach (var data in Model.Results)
+    {
+        <ul>
+        <li>
+        <a href="@Url.Action("PokemonDetail","Pokemon", new { name = data.Name })">@data.Name</a>
+        </li>
+        </ul>
+        
+    }
+    }
+</div>

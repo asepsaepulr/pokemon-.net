@@ -1,0 +1,56 @@
+﻿@model Assessment.Pokemon.Models.Pokemon.PokemonViewModel;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+@section PageStyles{
+    <link rel="stylesheet" href="~/lib/datatables/css/dataTables.bootstrap4.min.css" />
+}
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="datatable table table-head-custom table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th class="text-right">No</th>
+                        <th>Pokemon Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                    if (Model.Results != null)
+                    {
+                        var i = 1;
+                        foreach (var data in Model.Results)
+                        {
+                            <tr>
+                                <td>
+                                    @i
+                                </td>
+                                <td>
+                                    @data.Name
+                                </td>
+                                <td>
+                                    <a href="@Url.Action("PokemonDetail","Pokemon", new { name = data.Name })">view pokemon</a>
+                                </td>
+                            </tr>
+                            i++;
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/lib/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.datatable').DataTable({
+            });
+        });
+    </script>
+}

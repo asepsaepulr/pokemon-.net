@@ -1,0 +1,90 @@
+﻿@using Newtonsoft.Json
+@model Assessment.Pokemon.Models.Pokemon.PokemonDetailViewModel;
+
+@{
+    ViewData["Title"] = "Pokemon Detail";
+}
+@section PageStyles{
+<link rel="stylesheet" href="~/css/detail-pokemon.css" />
+}
+<body class="bg-detail">
+    <div class="number">#@Model.No</div>
+    <div class="content">
+        <div class="row">
+            <div class="title">
+                <div class="subgrid">
+                    <div class="emoji">
+                        <span></span>
+                    </div>
+                    @foreach (var type in Model.Types)
+                    {
+                        <div class="type">@type.Type.Name</div>
+                    }
+                    <div class="name">@Model.Species.Name</div>
+                    <div class="desc">It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.</div>
+                    <div class="details">
+                        <div class="row-ex">
+                            <span>Height</span>
+                            <span>@Model.Height M</span>
+                        </div>
+                        <div class="row-ex">
+                            <span>Weight</span>
+                            <span>@Model.Weight KG</span>
+                        </div>
+                        <div class="row-ex">
+                            <span>Abilities</span>
+                            <span>34</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="picture">
+                    <img src="@Model.Sprites.Other.OfficialArtwork.FrontDefault" />
+                </div>
+            </div>
+            <div class="stats">
+                <div class="title">Stats</div>
+                <div class="graphics">
+                    @foreach (var stat in @Model.Stats)
+                    {
+                        <div class="d-flex row-ex justify-content-between">
+                            <div class="p-2 name">@stat.Stat.Name</div>
+                            <div class="progress">
+                                <div class="progress-bar p-2" role="progressbar" aria-label="Basic example" style="width: @stat.BaseStat%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="p-2 base">@stat.BaseStat</div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary" id="addpokemon" data="@(JsonConvert.SerializeObject(Model))">Add Pokemon</button>
+</body>
+@section Scripts{
+    <script>
+        $(document).ready(function() {
+            $('#addpokemon').on('click', function() {
+                var data = $(this).attr('data');
+                addNewItem(data);
+            });
+
+            function addNewItem(item) {
+                var getStorage = JSON.parse(localStorage.getItem("mypokemon"));
+                var myList = [];
+
+                myList.push(JSON.parse(item));
+
+                if (getStorage != null) {
+                    for (var i = 0; i < getStorage.length; i++) {
+                        myList.push(getStorage[i]);
+                    }
+                }
+
+                localStorage.setItem("mypokemon", JSON.stringify(myList));
+                alert("Pokemon Berhasil di tambahkan!")
+            }
+        });
+    </script>
+}
+
+
