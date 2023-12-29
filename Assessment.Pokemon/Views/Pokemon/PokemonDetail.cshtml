@@ -8,6 +8,16 @@
 <link rel="stylesheet" href="~/css/detail-pokemon.css" />
 }
 <body class="bg-detail">
+    <button type="button" class="btn btn-outline-light btn-lg me-1" style="margin-top:-22px; margin-left: 1000px;" id="addpokemon" data="@(JsonConvert.SerializeObject(Model))">Add Pokemon</button>
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000" style="position:relative; margin-top:50px; margin-left: 1210px; text-align: right ; bottom: 0; right: 300px;">
+        <div class="toast-header">
+            <strong class="mr-auto">Add Pokemon</strong>
+
+        </div>
+        <div class="toast-body">
+            Berhasil di tambahkan ke daftar My Pokemon
+        </div>
+    </div>
     <div class="number">#@Model.No</div>
     <div class="content">
         <div class="row">
@@ -16,10 +26,7 @@
                     <div class="emoji">
                         <span></span>
                     </div>
-                    @foreach (var type in Model.Types)
-                    {
-                        <div class="type">@type.Type.Name</div>
-                    }
+                    <div class="type">@Model.Types[0].Type.Name</div>
                     <div class="name">@Model.Species.Name</div>
                     <div class="desc">It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.</div>
                     <div class="details">
@@ -58,11 +65,12 @@
             </div>
         </div>
     </div>
-    <button type="button" class="btn btn-primary" id="addpokemon" data="@(JsonConvert.SerializeObject(Model))">Add Pokemon</button>
 </body>
 @section Scripts{
     <script>
         $(document).ready(function() {
+            const color = pokemon.backgroundPokemon('@Model.Types[0].Type.Name');
+            $(".bg-detail").attr("style", "background-color: "+color+";")
             $('#addpokemon').on('click', function() {
                 var data = $(this).attr('data');
                 addNewItem(data);
@@ -81,7 +89,7 @@
                 }
 
                 localStorage.setItem("mypokemon", JSON.stringify(myList));
-                alert("Pokemon Berhasil di tambahkan!")
+                $('.toast').toast('show');
             }
         });
     </script>

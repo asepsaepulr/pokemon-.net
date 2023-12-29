@@ -148,8 +148,6 @@
 }
 
 .picture::before {
-    content: "";
-    display: block;
     bottom: 0;
     left: calc(50% - 100px);
     position: absolute;
@@ -220,7 +218,6 @@
     font-weight: 900;
     font-size: 20vmax;
     color: rgba(255, 255, 255, 0.18);
-    user-select: none;
     right: 0;
     top: -90px;
     z-index: 1;
@@ -289,7 +286,6 @@
     .number {
         font-size: 30vmax;
         color: rgba(255, 255, 255, 0.18);
-        user-select: none;
         right: 0;
         top: 100px;
         z-index: 1;
@@ -304,4 +300,7 @@
     .topo {
         display: flex;
     }
+}
+.toast {
+
 }

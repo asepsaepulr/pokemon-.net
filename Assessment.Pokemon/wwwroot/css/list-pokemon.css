@@ -1,0 +1,55 @@
+﻿.bg-detail {
+    position: relative;
+    background: url('../img/al.jpg');
+    background-blend-mode: soft-light, normal;
+    font-family: "Montserrat" !important;
+    transition: all 0.5s ease-in-out;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+.table-responsive{
+    color:aliceblue;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+tbody tr:hover {
+    background-color: #e2e6ea;
+}
+
+th, td {
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+}
+td:nth-child(1) span,td:nth-child(2) span, td:nth-child(4) span, td:nth-child(5) span {
+    position: relative;
+    border-radius: 80px;
+    background-color: #f8f9fa;
+    padding: 10px;
+}
+td:nth-child(3) {
+    position: relative;
+    border-radius: 80px;
+    background-color: #f8f9fa;
+    padding: 10px;
+}
+ .dataTables_wrapper .dataTables_filter {
+      text-align: right;
+      margin-bottom: 10px;
+    }
+
+.dataTables_wrapper .dataTables_filter input {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+.img-front {
+    width: 220px;
+    transition: transform 0.3s ease-in-out;
+}
+.img-front:hover {
+    transform: scale(1.2);
+}

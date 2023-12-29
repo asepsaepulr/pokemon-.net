@@ -1,0 +1,5 @@
+G:\Radyalabs FIle\Project\Assessment.Pokemon\obj\Debug\net7.0\Assessment.Pokemon.csproj.AssemblyReference.cache
+G:\Radyalabs FIle\Project\Assessment.Pokemon\obj\Debug\net7.0\Assessment.Pokemon.GeneratedMSBuildEditorConfig.editorconfig
+G:\Radyalabs FIle\Project\Assessment.Pokemon\obj\Debug\net7.0\Assessment.Pokemon.AssemblyInfoInputs.cache
+G:\Radyalabs FIle\Project\Assessment.Pokemon\obj\Debug\net7.0\Assessment.Pokemon.AssemblyInfo.cs
+G:\Radyalabs FIle\Project\Assessment.Pokemon\obj\Debug\net7.0\Assessment.Pokemon.csproj.CoreCompileInputs.cache

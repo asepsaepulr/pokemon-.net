@@ -20,7 +20,8 @@ namespace Assessment.Pokemon.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(JsonConvert.DeserializeObject<PokemonViewModel>(await client.GetStringAsync(url)));
+            var listPokemon = await client.GetStringAsync(url);
+            return View(JsonConvert.DeserializeObject<PokemonViewModel>(listPokemon));
         }
 
         public async Task<IActionResult> Detail(string name)
