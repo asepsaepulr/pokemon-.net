@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="~/css/list-pokemon.css" />
     <link rel="stylesheet" href="~/lib/datatables/css/dataTables.bootstrap4.min.css" />
 }
-
 <body class="bg-detail">
+    <div class="logo-poke">
+    <img src="~/img/pokemon-nobg.png" />
+    </div>
     <div class="card-body">
         <div class="table-responsive">
             <table id="pokemonTable" class="datatable table table-head-custom">
@@ -61,7 +63,6 @@
 
                 for (const pokemon of results) {
                     const pokemonDetail = await fetchPokemonDetails(pokemon.url);
-                    console.log(pokemonDetail)
                     pokemonData.push({
                         id: '<span>' + pokemonDetail.id + '</span>',
                         name: '<span> <a href="' + '@Url.Action("PokemonDetail", "Pokemon")?name=' + encodeURIComponent(pokemonDetail.name) + '">' + pokemonDetail.name + '</a> </span>',

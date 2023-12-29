@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\img\\al.jpg"
     },
     {
+      "Id": "G:\\Radyalabs FIle\\Project\\Assessment.Pokemon\\Assessment.Pokemon\\wwwroot\\img\\pokemon-nobg.png",
+      "PackagePath": "staticwebassets\\img\\pokemon-nobg.png"
+    },
+    {
       "Id": "G:\\Radyalabs FIle\\Project\\Assessment.Pokemon\\Assessment.Pokemon\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

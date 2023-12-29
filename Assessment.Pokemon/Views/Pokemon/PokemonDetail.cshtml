@@ -12,7 +12,6 @@
     <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000" style="position:relative; margin-top:50px; margin-left: 1210px; text-align: right ; bottom: 0; right: 300px;">
         <div class="toast-header">
             <strong class="mr-auto">Add Pokemon</strong>
-
         </div>
         <div class="toast-body">
             Berhasil di tambahkan ke daftar My Pokemon
@@ -77,19 +76,23 @@
             });
 
             function addNewItem(item) {
-                var getStorage = JSON.parse(localStorage.getItem("mypokemon"));
-                var myList = [];
+                
+                var getStorage = JSON.parse(localStorage.getItem("mypokemon")) || [];
+                var isDuplicate = getStorage.some(function (items) {
+                    return JSON.stringify(items) === item;
+                });
 
-                myList.push(JSON.parse(item));
+                if (!isDuplicate) {
+                    getStorage.push(JSON.parse(item));
 
-                if (getStorage != null) {
-                    for (var i = 0; i < getStorage.length; i++) {
-                        myList.push(getStorage[i]);
-                    }
+                    // Simpan array data baru ke localStorage
+                    localStorage.setItem('mypokemon', JSON.stringify(getStorage));
+
+                    $('.toast').toast('show');
+                } else {
+                    $('.toast').find('.toast-body').text("Pokemon sudah pernah ditambahkan")
+                    $('.toast').toast('show');
                 }
-
-                localStorage.setItem("mypokemon", JSON.stringify(myList));
-                $('.toast').toast('show');
             }
         });
     </script>

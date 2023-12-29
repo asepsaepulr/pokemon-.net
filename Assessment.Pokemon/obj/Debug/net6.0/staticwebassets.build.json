@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Zz4tdJGP7vR3OdHILBGxDOTq7CwdMhZegoumFlQ8bYw=",
+  "Hash": "QCcFaSo/e/oC4JhFZS5kPP6ehOvPAu4nAkB3HtZ7lM4=",
   "Source": "Assessment.Pokemon",
   "BasePath": "_content/Assessment.Pokemon",
   "Mode": "Default",
@@ -151,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\al.jpg"
+    },
+    {
+      "Identity": "G:\\Radyalabs FIle\\Project\\Assessment.Pokemon\\Assessment.Pokemon\\wwwroot\\img\\pokemon-nobg.png",
+      "SourceId": "Assessment.Pokemon",
+      "SourceType": "Discovered",
+      "ContentRoot": "G:\\Radyalabs FIle\\Project\\Assessment.Pokemon\\Assessment.Pokemon\\wwwroot\\",
+      "BasePath": "_content/Assessment.Pokemon",
+      "RelativePath": "img/pokemon-nobg.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\pokemon-nobg.png"
     },
     {
       "Identity": "G:\\Radyalabs FIle\\Project\\Assessment.Pokemon\\Assessment.Pokemon\\wwwroot\\js\\site.js",
